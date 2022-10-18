@@ -1,26 +1,24 @@
 'use strict';
 
-// document.querySelector('.message').textContent;
-// document.querySelector('.message').textContent = 'Corret number :)';
+const secretNumber = Math.trunc(Math.random() * 20) + 1; // Generator nahodneho celeho cisla
 
-// document.querySelector('.number').textContent = 13;
-// document.querySelector('.score').textContent = 10;
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
 
-// let aa = (document.querySelector('.guess').value = 23);
-// console.log(aa);
-// document.querySelector('.guess').value;
-
-// const aaa = function(){
-//     console.log(document.querySelector('.guess').value
-// }
-
-// document.querySelector('.check').addEventListener('click', aaa);
+document.querySelector('.message').textContent = secretNumber; // zobrazenie cisla
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
   if (!guess) {
-    document.querySelector('.message').textContent = 'No numbeeeer!';
+    displayMessage('No numbeeeer!');
+  } else if (guess === secretNumber) {
+    displayMessage('Correct Number!');
+  } else if (guess > secretNumber) {
+    displayMessage('Too high!');
+  } else if (guess < secretNumber) {
+    displayMessage('Too low!');
   }
 });
