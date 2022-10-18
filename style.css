@@ -22,19 +22,20 @@ body {
 
 .container {
   background-color: rgb(56, 56, 56);
-  margin: 100px;
+  margin: 6rem;
   border-radius: 10px;
   border: 1px solid #222;
   filter: drop-shadow(0 0 0.75rem rgb(33, 33, 33));
 }
 header {
   position: relative;
-  height: 25vh;
+  height: 35vh;
   border-bottom: 7px solid #eee;
+  /* border-bottom: 7px solid #60b347; */
 }
 
 main {
-  height: 55vh;
+  height: 65vh;
   color: #eee;
   display: flex;
   align-items: center;
@@ -74,6 +75,7 @@ h1 {
   position: absolute;
   bottom: 0;
   left: 50%;
+  transition: 0.2s linear;
   transform: translate(-50%, 50%);
 }
 
